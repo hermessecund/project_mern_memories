@@ -13,7 +13,9 @@ app.use(bodyParser.urlencoded({ limit: '30mb', extended: true }))
 app.use(cors());
 
 app.use('/posts', postRoutes);
-
+app.use('/user', postRouter);
+app.get('/', (reg, res)  => {res.send('APP is Running');
+});
 const CONNECTION_URL = 'mongodb+srv://tarwar:tarwar.com@cluster0.n6vlg.mongodb.net/?retryWrites=true&w=majority';
 const PORT = process.env.PORT|| 5000;
 
